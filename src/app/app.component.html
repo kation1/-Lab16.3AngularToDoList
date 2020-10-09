@@ -1,9 +1,30 @@
-New Task:<input [(ngModel)]="newTask" /> 
+<input type="text" placeholder="Type to search or add new" [(ngModel)]="newTask" /> <br>
 <button (click)="addTask()"> Add Task </button> 
+
+<div>
+    <!-- <input type="text" [(ngModel)]="term"> -->
+    <div *ngFor = "let item of toDoList|filter:newTask;" >
+      <p>
+        {{item.task}}   {{item.completed}}
+    <button (click)="markComplete(item)">mark complete</button>
+    <button (click)="delete(item)">delete</button>
+    <button (click)="edit(item)">edit</button>
+      </p>
+    </div>
+
+</div>  
+
+
+
+
 
 <div *ngIf="toDoList?.length==0">Congrats</div>
 
 <div *ngFor="let item of toDoList;let index = index;">{{item.task}}   {{item.completed}}
     <button (click)="markComplete(index)">mark complete</button>
     <button (click)="delete(index)">delete</button>
+    <button (click)="edit(index)">edit</button>
 </div>
+
+
+

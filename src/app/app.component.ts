@@ -16,28 +16,35 @@ export class AppComponent {
     {task:"third thing", completed:false}
   ];
 
-  markComplete = function(i){
-     if(this.toDoList[i].completed == false)
+  markComplete = function(item){
+     if(item.completed == false)
      {
-       this.toDoList[i].completed = true;
+       item.completed = true;
      }
      else
      {
-      this.toDoList[i].completed = false;
+      item.completed = false;
      }
   };
 
-  delete = function(i){
-    this.toDoList.splice(i,1);
+  delete = function(item){
+    this.toDoList.splice(item,1);
  };
+
+ edit = function(item)
+ {
+   item.task = this.newTask;
+   this.newTask = "";
+ }
   addTask = function(){
-    
 
     this.toDoList.push({
       task:this.newTask,
       completed:false
     });
   };
+
+
 
 }
 
