@@ -1,7 +1,9 @@
 New Task:<input [(ngModel)]="newTask" /> 
 <button (click)="addTask()"> Add Task </button> 
 
+<div *ngIf="toDoList?.length==0">Congrats</div>
 
-<div *ngFor="let item of toDoList;let index = index;">{{item.task}}   {{item.completed}}<button (click)="markComplete(index)">mark complete</button></div>
-
-<div *ngFor="let item of toDoList">{{item.task}} </div> 
+<div *ngFor="let item of toDoList;let index = index;">{{item.task}}   {{item.completed}}
+    <button (click)="markComplete(index)">mark complete</button>
+    <button (click)="delete(index)">delete</button>
+</div>

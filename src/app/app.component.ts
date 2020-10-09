@@ -26,6 +26,10 @@ export class AppComponent {
       this.toDoList[i].completed = false;
      }
   };
+
+  delete = function(i){
+    this.toDoList.splice(i,1);
+ };
   addTask = function(){
     
 
