@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    background: linear-gradient(to right,  #ff69b4,#ff0000);
+    }
+    
+div {
+    background-color: #eee;
+    border-radius: 10px;
+}
+
+div.form{
+    padding: 10px;
+    width:  900px;
+    margin: auto;
+
+}
+p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 675px;
+    font : ;
+}
+  button{
+    /* box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); */
+    text-align: center;
+    color:#ff1493;
+    background-color:#eee ;
+    border-radius: 5px;
+    border: 2px solid  #ff1493;
+
+    
+    
+  }
+
+  .completed {
+    text-decoration: line-through;
+}
+
+.addbutton{
+    width: 90%;
+    background-color: #ff1493;
+    color: #eee;
+    border:none
+
+
+}
+
+.congrats {
+    font-size: 100px;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red); 
+    -webkit-background-clip: text;
+    color: transparent;
+  }

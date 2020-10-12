@@ -10,13 +10,17 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Lab163AngularToDoList';
 
+ 
   toDoList: Todo[]= [
-    {task:"First thing", completed:false},
-    {task:"Second thing", completed:false},
-    {task:"third thing", completed:false}
+    {task:"Walk the dog", completed:false},
+    {task:"Study for the test", completed:false},
+    {task:"Contemplate life", completed:true},
+    {task:"Finish reading the stack of books", completed:false},
+    {task:"Do the house cleaning you've been putting off", completed:false},
+    {task:"Sleep", completed:true}
   ];
 
-  markComplete = function(item){
+  completeTask = function(item){
      if(item.completed == false)
      {
        item.completed = true;
@@ -27,7 +31,7 @@ export class AppComponent {
      }
   };
 
-  delete = function(item){
+  removeTask = function(item){
     this.toDoList.splice(item,1);
  };
 
@@ -44,11 +48,9 @@ export class AppComponent {
     });
   };
 
-
+ 
 
 }
-
-
 
 
 interface Todo {
