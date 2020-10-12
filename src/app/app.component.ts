@@ -9,9 +9,11 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'Lab163AngularToDoList';
+  newTask :string ="";
+  term:string ="";
+  count:number = 0;
 
- 
-  toDoList: Todo[]= [
+ toDoList: Todo[]= [
     {task:"Walk the dog", completed:false},
     {task:"Study for the test", completed:false},
     {task:"Contemplate life", completed:true},
@@ -31,8 +33,8 @@ export class AppComponent {
      }
   };
 
-  removeTask = function(item){
-    this.toDoList.splice(item,1);
+removeTask = function(item){
+    this.toDoList.splice(this.toDoList.indexOf(item),1);
  };
 
  edit = function(item)
@@ -47,7 +49,26 @@ export class AppComponent {
       completed:false
     });
   };
-
+allDone()
+{
+  
+  for(let item of this.toDoList)
+  {
+    if(item.completed == false)
+    {
+      this.count++; 
+    }
+  }
+   if(this.count > 0)
+   {
+     return false;
+   }
+   else
+   {
+     return true;
+   }
+  
+}
  
 
 }

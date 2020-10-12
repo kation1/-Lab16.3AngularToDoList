@@ -3,6 +3,7 @@
 
   <input type="text" placeholder="Search" [(ngModel)]="term">
   <div class="congrats" *ngIf="toDoList?.length==0">Congrats! You finished your list!</div>
+  <div class="congrats" *ngIf="allDone()">Congrats! You finished your list!</div>
   <tr *ngFor="let item of toDoList|filter:term;">
 
 
